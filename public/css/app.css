@@ -1,0 +1,232 @@
+/* Mendefinisikan variabel */
+:root {
+    --blue-primaryRgb: rgb(33,145,230);
+    --blue-primaryHex: #2191e6;
+    --blue-secondaryHex: #0f78cb;
+    --grey-primary: #c2c2c2;
+    --grey-secondary: #efefef;
+  }
+
+
+/* TODO: ALL */
+* {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 425px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.transparent-background {
+    background-color: transparent;
+}
+
+
+/* TODO: NAV */
+.nav-bg-blue-primary {
+    background-color: var(--blue-primaryRgb);
+    color: white;
+}
+.nav-bottom {
+    height: 88px;
+}
+.bottom-shadow{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.top-shadow{
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.2);
+}
+.balance-shadow{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* TODO: BOLD */
+.th-1 {
+    font-weight: 800;
+}
+.th-2 {
+    font-weight: 700;
+}
+.th-3 {
+    font-weight: 600;
+}
+.th-4 {
+    font-weight: 500;
+}
+
+
+/* TODO: LETTER SPACING */
+.ls-1 {
+    letter-spacing: 1px;
+}
+.ls-2 {
+    letter-spacing: 2px;
+}
+.ls-3 {
+    letter-spacing: 3px;
+}
+
+
+/* TODO: INDENT */
+.indent-right {
+    margin-left: auto;
+}
+
+/* TODO: TEXT SIZE */
+.text-small {
+    font-size: 14px;
+}
+.text-medium {
+    font-size: 16px;
+}
+
+
+/* TODO: TEXT-COLOR */
+.text-blue-primary {
+    color: var(--blue-primaryRgb);
+}
+.text-blue-secondary {
+    color: var(--blue-secondaryHex);
+}
+.text-grey-primary {
+    color: var(--grey-primary)
+}
+.text-grey-secondary {
+    color: var(--grey-secondary)
+}
+.text-green {
+    color: #36AE7C;
+}
+.text-red {
+    color: #DF2E38;
+}
+
+
+/* TODO: BACKGROUND-COLOR */
+.bg-blue-primary {
+    background: var(--blue-primaryRgb);
+}
+.bg-blue-secondary {
+    background: var(--blue-secondaryHex);
+}
+.bg-grey-secondary {
+    background: var(--grey-secondary)
+}
+
+
+/* TODO: LAYOUT */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #f0f0f0; */
+    padding: 10px;
+}
+
+
+/* TODO: BUTTON */
+.buttonPrimary {
+    font-size: 18px;
+    background-color: var(--blue-secondaryHex);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.buttonOutlinePrimary {
+    background-color: #ffffff;
+    color: var(--blue-secondaryHex);
+    border: 2px solid var(--blue-secondaryHex);
+    border-radius: 5px;
+    padding: 4px;
+
+}
+.buttonOutlineSecondary{
+    background-color: var(--blue-secondaryHex);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 8px;
+}
+.buttonOutlineSecondary:hover {
+    background-color: #ffffff;
+    color: var(--blue-secondaryHex);
+}
+.buttonPrimary.btn-login{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+/* TODO: CARD */
+.my-white-card {
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+}
+.my-blue-card {
+    background-color: var(--blue-secondaryHex);
+    padding: 16px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+
+/* TODO: OTHER */
+.logo-brand {
+    font-family: 'Lilita One', cursive;
+    letter-spacing: 1px;
+    font-size:28px;
+}
+.bg-circle {
+    width: 72px; /* Sesuaikan dengan lebar lingkaran */
+    height: 72px; /* Sesuaikan dengan tinggi lingkaran */
+    background-color: var(--blue-secondaryHex); /* Warna latar belakang lingkaran */
+    border-radius: 50%; /* Membuat lingkaran dengan radius 50% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Menggunakan margin auto untuk memastikan div berada di tengah */
+}
+
+
+/* TODO: TEMPLATE */
+.inputGroup {
+    /* font-family: 'Segoe UI', sans-serif; */
+    margin: 1em 0 1em 0;
+    max-width: 425px;
+    position: relative;
+  }
+
+  .inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid var(--blue-primaryRgb);
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: var(--blue-primaryRgb);
+  }
+
+  .inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #ffffff;
+  }
+
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: var(--blue-primaryRgb);
+  }
