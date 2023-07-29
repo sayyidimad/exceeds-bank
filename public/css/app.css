@@ -113,6 +113,9 @@ a {
 .bg-grey-secondary {
     background: var(--grey-secondary)
 }
+.bg-grey-primary{
+    background: var(--grey-primary)
+}
 
 
 /* TODO: LAYOUT */
@@ -153,6 +156,11 @@ a {
     color: var(--blue-secondaryHex);
 }
 .buttonPrimary.btn-login{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.buttonPrimary.btn-transfer-2{
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -230,3 +238,69 @@ a {
   .inputGroup :is(input:focus, input:valid) {
     border-color: var(--blue-primaryRgb);
   }
+
+
+  /* TODO: RADIO BUTTON MUTASI */
+  .radio-input input {
+    display: none;
+  }
+
+  .radio-input {
+    --container_width: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(15, 120, 203, 0.05);
+    color: var(--blue-secondaryHex);
+    width: var(--container_width);
+    overflow: hidden;
+    border: 1px solid rgba(53, 52, 52, 0.226);
+  }
+
+  .radio-input label {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+  }
+
+  .selection {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: calc(var(--container_width) / 2);
+    z-index: 0;
+    left: 0;
+    top: 0;
+    transition: .15s ease;
+  }
+
+  .radio-input label:has(input:checked) {
+    color: #fff;
+  }
+
+  .radio-input label:has(input:checked) ~ .selection {
+    background-color: var(--blue-secondaryHex);
+    display: inline-block;
+  }
+
+  .radio-input label:nth-child(1):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 0/2));
+  }
+
+  .radio-input label:nth-child(2):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 1/2));
+  }
+
+  .radio-input label:nth-child(3):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 2/2));
+  }
+
+
