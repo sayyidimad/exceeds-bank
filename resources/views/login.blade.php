@@ -11,7 +11,7 @@
         </svg>
     </a>
     @endif
-    <a class="navbar-brand nav-bg-blue-primary mx-auto" href="/"><span class="logo-brand">EXCEEDS</span><span class="th-3">Mobile</span></a>
+    <a class="navbar-brand nav-bg-blue-primary mx-auto" href="/login"><span class="logo-brand">EXCEEDS</span><span class="th-3">Mobile</span></a>
 @endsection
 
 @section('content')

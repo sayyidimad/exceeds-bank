@@ -26,6 +26,10 @@ Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
 
+Route::get('/mutation', function () {
+    return view('mutation');
+})->name('mutation');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
