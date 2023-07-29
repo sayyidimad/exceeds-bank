@@ -30,6 +30,14 @@ Route::get('/mutation', function () {
     return view('mutation');
 })->name('mutation');
 
+Route::get('/transfer', function () {
+    return view('transfer');
+})->name('transfer');
+
+Route::get('/transfer-2', function () {
+    return view('transfer-2');
+})->name('transfer-2');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

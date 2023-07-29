@@ -42,7 +42,9 @@
                         <img src="{{ asset('img/fast-menu/pulsa.png') }}" alt="" width="64px">
                     </td>
                     <td class="col text-center">
-                        <img src="{{ asset('img/fast-menu/promo.png') }}" alt="" width="64px">
+                        <a href="{{ route('transfer') }}">
+                            <img src="{{ asset('img/fast-menu/transfer.png') }}" alt="" width="64px">
+                        </a>
                     </td>
                     <td class="col text-center">
                         <img src="{{ asset('img/fast-menu/dompet-digital.png') }}" alt="" width="64px">
@@ -56,7 +58,9 @@
                         <p class="th-3">Pulsa/Data</p>
                     </td>
                     <td class="col text-center">
-                        <p class="th-3">Transfer</p>
+                        <a href="{{ route('transfer') }}">
+                            <p class="th-3">Transfer</p>
+                        </a>
                     </td>
                     <td class="col text-center">
                         <p class="th-3">Dompet <br> Digital</p>
