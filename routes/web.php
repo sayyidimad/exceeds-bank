@@ -14,18 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page');
-})->name('landing-page');
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
-
-Route::get('/homepage', function () {
-    return view('homepage');
-})->name('homepage');
-
 Route::get('/mutation', function () {
     return view('mutation');
 })->name('mutation');
@@ -38,14 +26,16 @@ Route::get('/transfer-2', function () {
     return view('transfer-2');
 })->name('transfer-2');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return view('landing-page');
+    })->name('landing-page');
+});
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/homepage', function () {
+        return view('homepage');
+    })->name('homepage');
+});
 
 require __DIR__.'/auth.php';
