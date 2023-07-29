@@ -30,6 +30,7 @@ class UserFactory extends Factory
             "email" => $this->faker->unique()->safeEmail,
         ]);
 
+
         // Check if the API request was successful
         if ($response->successful()) {
             $responseData = $response->json();
