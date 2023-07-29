@@ -44,7 +44,7 @@ class AuthenticatedSessionController extends Controller
             config(['session.lifetime' => 15]);
 
             // Save the accessToken to the cache (you can set the cache expiration time as per your requirement)
-            if (auth()->attempt(['name' => $request->username, 'password' => $request->password])) {
+            if (auth()->attempt(['username' => $request->username, 'password' => $request->password])) {
                 $token = $json['data']['accessToken'];
                 Cache::put('access_token', $token, now()->addMinutes(15)); // For example, cache it for 60 minutes
 
