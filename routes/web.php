@@ -14,18 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/mutation', function () {
-    return view('mutation');
-})->name('mutation');
-
-Route::get('/transfer', function () {
-    return view('transfer');
-})->name('transfer');
-
-Route::get('/transfer-2', function () {
-    return view('transfer-2');
-})->name('transfer-2');
-
 Route::middleware('guest')->group(function () {
     Route::get('/', function () {
         return view('landing-page');
@@ -36,6 +24,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/homepage', function () {
         return view('homepage');
     })->name('homepage');
+
+    Route::get('/mutation', function () {
+        return view('mutation');
+    })->name('mutation');
+
+    Route::get('/transfer', function () {
+        return view('transfer');
+    })->name('transfer');
+
+    Route::get('/transfer-2', function () {
+        return view('transfer-2');
+    })->name('transfer-2');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
