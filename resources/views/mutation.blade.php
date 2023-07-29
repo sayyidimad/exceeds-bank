@@ -83,13 +83,13 @@
             <div class="">
                 <div class="row mt-2">
                     <div class="col-6">
-                        <span class="th-3">BFST05007631</span>
-                        <span class="th-3">NBMB: CENAIDJA</span>
+                        <span class="th-3">BFST05003176</span>
+                        <span class="th-3">NBMB: CENAJOHN</span>
                     </div>
                     <div class="col-6">
                         <div class="">
-                            <span class="th-3 justify-content-end align-items-end row">- Rp 2.500.000</span>
-                            <span class="th-6 text-grey-primary text-small justify-content-end align-items-end row">23:45:00 WIB</span>
+                            <span class="th-3 justify-content-end align-items-end row">- Rp 10.000.000</span>
+                            <span class="th-6 text-grey-primary text-small justify-content-end align-items-end row">12:00:00 WIB</span>
                         </div>
                     </div>
                 </div>
