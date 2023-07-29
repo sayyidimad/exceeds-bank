@@ -12,8 +12,8 @@
                     <div class="row mt-1"><p class="text-center {{ request()->routeIs('homepage') ? 'text-blue-secondary th-3'  : 'text-grey-primary th-4'}} ">Home</p></div>
                 </div>
             </a>
-            <a href="/mutation">
-                <div class="col text-center" style="margin-left: 16px">
+            <div class="col text-center" style="margin-left: 16px">
+                <a href="/mutation">
                     <div class="row mt-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="{{ request()->routeIs('mutation') ? 'var(--blue-secondaryHex)'  : 'var(--grey-primary)'}}" class="bi bi-file-text" viewBox="0 0 16 16">
                             <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
@@ -21,8 +21,8 @@
                           </svg>
                     </div>
                     <div class="row mt-1"><p class="text-center {{ request()->routeIs('mutation') ? 'text-blue-secondary th-3'  : 'text-grey-primary th-4'}} ">Mutasi</p></div>
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="col-4 text-center">
                 <div class="row justify-content-center align-items-center" style="margin-top: -56px">
                     <div class="bg-circle">

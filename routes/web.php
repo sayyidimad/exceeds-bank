@@ -26,16 +26,16 @@ Route::get('/transfer-2', function () {
     return view('transfer-2');
 })->name('transfer-2');
 
-Route::middleware('guest')->group(function () {
+// Route::middleware('guest')->group(function () {
     Route::get('/', function () {
         return view('landing-page');
     })->name('landing-page');
-});
+// });
 
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
     Route::get('/homepage', function () {
         return view('homepage');
     })->name('homepage');
-});
+// });
 
 require __DIR__.'/auth.php';
