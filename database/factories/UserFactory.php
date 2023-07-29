@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
@@ -21,28 +22,34 @@ class UserFactory extends Factory
         // Make an HTTP request to the API to get the user data
         $response = Http::post('http://34.101.154.14:8175/hackathon/user/auth/create', [
             "ktpId" => $this->faker->numerify('############'),
-            "username" => "exceeds",
+            "username" => $this->faker->unique()->userName,
             "phoneNumber" => $this->faker->phoneNumber,
             "loginPassword" => '12345678',
             "birthDate" => $this->faker->date('dmY'),
-            "gender" => $this->faker->randomElement([0, 1]), // Assuming gender 1 represents male and 2 represents female
+            "gender" => $this->faker->randomElement([0, 1]),
             "email" => $this->faker->unique()->safeEmail,
         ]);
 
         // Check if the API request was successful
         if ($response->successful()) {
             $responseData = $response->json();
-            print($responseData);
+            print("berhasil");
+            $day = substr($responseData['data']['birthDate'], 0, 2);
+            $month = substr($responseData['data']['birthDate'], 2, 2);
+            $year = substr($responseData['data']['birthDate'], 4, 4);
+
+            // Assuming the provided time is 00:00:00
+            $birthDate = Carbon::createFromDate($year, $month, $day)->toDateString();
 
             // Return the received user data from the API
             return [
-                "ktpId" => $responseData['ktpId'],
-                "username" => $responseData['username'],
-                "phoneNumber" => $responseData['phoneNumber'],
+                "ktpId" => $responseData['data']['ktpId'],
+                "username" => $responseData['data']['username'],
+                "phoneNumber" => $responseData['data']['phoneNumber'],
                 "password" => bcrypt('12345678'), // Assuming you want to use a fixed password for all seeded users
-                "birthDate" => $responseData['birthDate'],
-                "gender" => $responseData['gender'],
-                "email" => $responseData['email'],
+                "birthDate" => $birthDate,
+                "gender" => $responseData['data']['gender'],
+                "email" => $responseData['data']['email'],
             ];
         } else {
             // Handle API request error
