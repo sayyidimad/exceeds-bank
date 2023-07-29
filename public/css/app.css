@@ -160,6 +160,11 @@ a {
     cursor: pointer;
 }
 
+.buttonPrimary.btn-transfer-2{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
 
 /* TODO: CARD */
 .my-white-card {
