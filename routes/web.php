@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,13 +30,13 @@ Route::middleware('auth')->group(function () {
         return view('mutation');
     })->name('mutation');
 
-    Route::get('/transfer', function () {
-        return view('transfer');
-    })->name('transfer');
+    Route::get('/transfer', [TransactionController::class, 'index'])->name('transfer');
+    Route::post('/transfer', [TransactionController::class, 'store'])->name('transfer.store');
+    Route::get('/transfer/final', [TransactionController::class, 'index2'])->name('transfer-2');
+});
 
-    Route::get('/transfer-2', function () {
-        return view('transfer-2');
-    })->name('transfer-2');
+Route::get('/test', function () {
+    return dd(Cache::get('access_token'));
 });
 
 require __DIR__ . '/auth.php';

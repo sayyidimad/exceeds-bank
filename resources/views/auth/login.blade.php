@@ -53,9 +53,7 @@
         </div>
 
         <div class="footer ">
-            <a href="{{ route('homepage') }}">
-                <button class="buttonPrimary btn-login w-100 th-2 indent-right">Login</button>
-            </a>
+            <button type="submit" class="buttonPrimary btn-login w-100 th-2 indent-right">Login</button>
         </div>
     </form>
 @stop
