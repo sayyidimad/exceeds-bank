@@ -41,6 +41,8 @@ class AuthenticatedSessionController extends Controller
 
         // Check if the API request was successful
         if ($response->getStatusCode() === 200 && $json['success']) {
+            config(['session.lifetime' => 15]);
+
             // Save the accessToken to the cache (you can set the cache expiration time as per your requirement)
             if (auth()->attempt(['name' => $request->username, 'password' => $request->password])) {
                 $token = $json['data']['accessToken'];
@@ -48,6 +50,7 @@ class AuthenticatedSessionController extends Controller
 
                 // Authenticate the user in your application
                 $request->session()->regenerate();
+
                 return redirect()->intended(RouteServiceProvider::HOME);
             }
         } else {
@@ -73,7 +76,8 @@ class AuthenticatedSessionController extends Controller
         return redirect('/');
     }
 
-    function username() {
-        return 'name';
+    function username()
+    {
+        return 'username';
     }
 }
